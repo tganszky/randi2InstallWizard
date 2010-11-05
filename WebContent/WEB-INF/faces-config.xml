@@ -5,5 +5,34 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
     version="2.0">
+    
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+        </locale-config>
+    </application>
+    
+     <!-- Basic Stacking Panel example bean-->
+    <managed-bean>
+        <description>
+            Backing bean for Stacking Panel.
+        </description>
+        <managed-bean-name>stackingPanel</managed-bean-name>
+        <managed-bean-class>
+            tab.PanelStackBean
+        </managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>
+            Backing bean for Tab Panel.
+        </description>
+        <managed-bean-name>tabPanel</managed-bean-name>
+        <managed-bean-class>
+            tab.StaticTabSetBean
+        </managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
 
 </faces-config>

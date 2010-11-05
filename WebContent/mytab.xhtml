@@ -16,40 +16,83 @@
 	<div class="body">
 	<div class="centeredContent"><ice:form>
 
-		<ice:panelGroup styleClass="icePnlClpsbl">
-			<ice:panelGroup styleClass="icePnlClpsblHdr">
-				<ice:graphicImage value="/img/randi2_small.png"></ice:graphicImage>
-			</ice:panelGroup>
+
+		<ice:panelDivider styleClass="myDvrPanel1" dividerPosition="20">
+			<f:facet name="first">
+
+				<ice:outputText visible="false" value="Hallo" />
+
+			</f:facet>
+
+			<f:facet name="second">
+
+				<ice:panelTabSet border="2" align="center" frame="border"
+					tabPlacement="top">
+					<ice:commandButton
+							value="TabSwitch to #{tabPanel.nextIndex}"
+							actionListener="#{tabPanel.switchGroup}" />
+					<ice:panelTab label="Schritt 1" styleClass="contentPane">
+						<p>Schritt 1, Willkommen bei der Installation"</p>
+						<ice:selectOneMenu value="#{stackingPanel.actionSelectedGroup}"
+							partialSubmit="true">
+							<f:selectItem itemLabel="Group One" itemValue="groupOne" />
+							<f:selectItem itemLabel="Group Two" itemValue="groupTwo" />
+							<f:selectItem itemLabel="Group Three" itemValue="groupThree" />
+						</ice:selectOneMenu>
+						<ice:commandButton
+							value="Switch to #{stackingPanel.actionSelectedGroup}"
+							actionListener="#{stackingPanel.switchGroup}" />
+						<ice:selectOneRadio value="#{stackingPanel.selectedGroup}"
+							partialSubmit="true">
+							<f:selectItem itemLabel="Group One" itemValue="groupOne" />
+							<f:selectItem itemLabel="Group Two" itemValue="groupTwo" />
+							<f:selectItem itemLabel="Group Three" itemValue="groupThree" />
+						</ice:selectOneRadio>
+
+						<ice:panelStack selectedPanel="#{stackingPanel.selectedGroup}">
+
+							<ice:panelGroup id="groupOne" border="true">
+								<ice:outputText value="Group 1" />
+								<br />
+
+							</ice:panelGroup>
 
 
-			<ice:panelDivider styleClass="myDvrPanel1" dividerPosition="20">
-				<f:facet name="first">
+							<ice:panelGroup id="groupTwo" border="true">
+								<ice:outputText value="Group 2" />
+							</ice:panelGroup>
 
-					<ice:outputText visible="false" value="Hallo" />
-				</f:facet>
+							<ice:panelGroup id="groupThree" border="true">
+								<ice:outputText value="Group 3" />
+							</ice:panelGroup>
 
-				<f:facet name="second">
-					<ice:panelTabSet border="2" align="center" frame="border"
-						tabPlacement="top">
-						<ice:panelTab label="Schritt 1" styleClass="contentPane">
-				Schritt 1, Willkommen bei der Installation
-			</ice:panelTab>
+						</ice:panelStack>
+						<ice:commandButton
+							value="Switch to #{stackingPanel.actionSelectedGroup}"
+							actionListener="#{stackingPanel.switchGroup}" />
+					</ice:panelTab>
 
-						<ice:panelTab label="Schritt 2" styleClass="contentPane">
-				Schritt 2, ersten Benutzer anlegen
-				<ice:commandButton partialSubmit="true" value="dasasd" type="submit"></ice:commandButton>
+					<ice:panelTab label="Schritt 2" styleClass="contentPane">
+							Schritt 2, ersten Benutzer anlegen"
+							<ice:commandButton partialSubmit="true" value="dasasd"
+							type="submit"></ice:commandButton>
+					</ice:panelTab>
+
+					<ice:panelTab label="Schritt 3" styleClass="contentPane">
+							Schritt 3, daten eingeben die nötig sind" 
 						</ice:panelTab>
+					<ice:panelTab label="Schritt 4" styleClass="contentPane">
+							Schritt 4, installation abschliessen undeinloggengehen" 
+						</ice:panelTab>
+				</ice:panelTabSet>
 
-						<ice:panelTab label="Schritt 3" styleClass="contentPane">
-				Schritt 3, daten eingeben die nötig sind
-			</ice:panelTab>
-						<ice:panelTab label="Schritt 4" styleClass="contentPane">
-				Schritt 4, installation abschliessen und einloggen gehen
-			</ice:panelTab>
-					</ice:panelTabSet>
-				</f:facet>
-			</ice:panelDivider>
-		</ice:panelGroup>
+
+			</f:facet>
+		</ice:panelDivider>
+
+
+
+
 	</ice:form></div>
 	</div>
 	</div>
