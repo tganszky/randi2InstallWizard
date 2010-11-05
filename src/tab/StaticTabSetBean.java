@@ -31,9 +31,9 @@ public class StaticTabSetBean implements TabChangeListener, Serializable {
 	private boolean tabbedPane3Visible;
 
 	// selected tab index
-	private String nextIndex = "1";
+	private String nextIndex = "0";
 	private String selectedIndex = "0";
-	
+
 	/**
 	 * Tabbed placement, possible values are "top" and "bottom", the default is
 	 * "bottom".
@@ -80,11 +80,17 @@ public class StaticTabSetBean implements TabChangeListener, Serializable {
 		this.selectedIndex = selectedIndex;
 		this.nextIndex = Integer
 				.toString((Integer.parseInt(selectedIndex)) + 1);
+		if (nextIndex == null) {
+			System.out.println("wurde null bei set sel index(string)");
+		}
 	}
 
 	public void setSelectedIndex(int selectedIndex) {
 		this.selectedIndex = String.valueOf(selectedIndex);
 		this.nextIndex = Integer.toString(selectedIndex + 1);
+		if (nextIndex == null) {
+			System.out.println("wurde null bei set sel index(int)");
+		}
 	}
 
 	public int getNextInt() {
@@ -125,15 +131,28 @@ public class StaticTabSetBean implements TabChangeListener, Serializable {
 	public void processTabChange(TabChangeEvent tabChangeEvent)
 			throws AbortProcessingException {
 		// only used to show TabChangeListener usage.
+		System.out.println("only used to show TabChangeListener usage.");
+		System.out.println("Selected is " + selectedIndex);
 	}
 
 	public void switchGroup(ActionEvent e) {
-		System.out.println("this works");
-		selectedIndex = "1";
-		System.out.println(getNextIndex());
+		if (nextIndex == null) {
+			this.selectedIndex = "0";
+		} else {
+			if (Integer.parseInt(this.selectedIndex) < 3) {
+				System.out.println("in switch grp " + nextIndex);
+				this.selectedIndex = getNextString();
+			}
+		}
+
 	}
-	
-	public String getNextIndex(){
+
+	public String getNextIndex() {
 		return nextIndex;
 	}
+
+	public void setNextIndex(String nextIndex) {
+		this.nextIndex = nextIndex;
+	}
+
 }

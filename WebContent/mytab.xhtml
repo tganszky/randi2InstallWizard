@@ -27,10 +27,12 @@
 			<f:facet name="second">
 
 				<ice:panelTabSet border="2" align="center" frame="border"
-					tabPlacement="top">
-					<ice:commandButton
-							value="TabSwitch to #{tabPanel.nextIndex}"
-							actionListener="#{tabPanel.switchGroup}" />
+					tabPlacement="top" selectedIndex="#{tabPanel.focusIndex}"
+					tabChangeListener="#{tabPanel.processTabChange}"
+					title="This is title" summary="zusammenfassung">
+
+					<ice:commandButton value="TabSwitch to #{tabPanel.nextIndex}"
+						actionListener="#{tabPanel.switchGroup}" />
 					<ice:panelTab label="Schritt 1" styleClass="contentPane">
 						<p>Schritt 1, Willkommen bei der Installation"</p>
 						<ice:selectOneMenu value="#{stackingPanel.actionSelectedGroup}"
