@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<h:head>
+
+	<title><ui:insert name="title">RANDI2 Installer</ui:insert></title>
+
+	<ice:outputStyle href="/xmlhttp/css/rime/rime.css" />
+	<ice:outputStyle href="/RANDI2.css" />
+</h:head>
+
+<h:body>
+	<div id="content">
+	<div class="body">
+	<div class="centeredContent"><ice:form>
+
+		<ice:panelGroup styleClass="icePnlClpsbl">
+			<ice:panelGroup styleClass="icePnlClpsblHdr">
+				<ice:graphicImage value="/img/randi2_small.png"></ice:graphicImage>
+			</ice:panelGroup>
+
+
+			<ice:panelDivider styleClass="myDvrPanel1" dividerPosition="20">
+				<f:facet name="first">
+
+					<ice:outputText visible="false" value="Hallo" />
+				</f:facet>
+
+				<f:facet name="second">
+					<ice:panelTabSet border="2" align="center" frame="border"
+						tabPlacement="top">
+						<ice:panelTab label="Schritt 1" styleClass="contentPane">
+				Schritt 1, Willkommen bei der Installation
+			</ice:panelTab>
+
+						<ice:panelTab label="Schritt 2" styleClass="contentPane">
+				Schritt 2, ersten Benutzer anlegen
+				<ice:commandButton partialSubmit="true" value="dasasd" type="submit"></ice:commandButton>
+						</ice:panelTab>
+
+						<ice:panelTab label="Schritt 3" styleClass="contentPane">
+				Schritt 3, daten eingeben die nötig sind
+			</ice:panelTab>
+						<ice:panelTab label="Schritt 4" styleClass="contentPane">
+				Schritt 4, installation abschliessen und einloggen gehen
+			</ice:panelTab>
+					</ice:panelTabSet>
+				</f:facet>
+			</ice:panelDivider>
+		</ice:panelGroup>
+	</ice:form></div>
+	</div>
+	</div>
+</h:body>
+</html>

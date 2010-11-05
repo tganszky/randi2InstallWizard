@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<h:head>
+	<title><ui:insert name="title">
+		<ice:outputText nospan="true" value="Der Titel" />
+	</ui:insert></title>
+	<ice:outputStyle href="/xmlhttp/css/rime/rime.css" />
+	<ice:outputStyle href="/RANDI2.css" />
+</h:head>
+<h:body>
+	<ice:form>
+		<ice:panelGroup styleClass="componentBox">
+
+			<ice:panelGroup styleClass="synopsisBox panelTabSetContainer">
+				<ice:outputText value="Synopsis" />
+				<ice:outputText
+					value=" lohubliu anleitungs" />
+			</ice:panelGroup>
+
+			<!-- Controls for Static Tab Set -->
+			<ice:panelGroup
+				styleClass="exampleBox tabsetControls panelTabSetContainer">
+
+				<!-- Tab Visibility Controls -->
+				<ice:panelGroup style="float:left;width:200px;">
+
+					<ice:panelGroup style="float:left;width:190px;"
+						styleClass="firstChildTitle">
+						<ice:outputLabel value="text text" />
+					</ice:panelGroup>
+
+					<ice:panelGroup styleClass="clearer" />
+
+					<ice:panelGroup style="float:left;">
+						<ice:selectBooleanCheckbox id="tab1Visibility"
+							partialSubmit="true"
+							value="#{staticTabbedPaneExample.tabbedPane1Visible}"
+							title="text text" />
+						<ice:outputLabel value="text text"
+							for="tab1Visibility" />
+
+						<ice:selectBooleanCheckbox id="tab2Visibility"
+							partialSubmit="true"
+							value="#{staticTabbedPaneExample.tabbedPane2Visible}"
+							title="text text" />
+						<ice:outputLabel value="text text"
+							for="tab2Visibility" />
+
+						<ice:selectBooleanCheckbox id="tab3Visibility"
+							partialSubmit="true"
+							value="#{staticTabbedPaneExample.tabbedPane3Visible}"
+							title="text text" />
+						<ice:outputLabel value="#{msgs['page.panelTabSet.tab3']}"
+							for="tab3Visibility" />
+					</ice:panelGroup>
+				</ice:panelGroup>
+
+				<!-- Tab Focus Controls -->
+				<ice:panelGroup style="float:left;width:200px;">
+
+					<ice:panelGroup style="float:left;" styleClass="firstChildTitle">
+						<ice:outputLabel value="text text" />
+					</ice:panelGroup>
+
+					<ice:panelGroup styleClass="clearer" />
+
+					<ice:panelGroup style="float:left;">
+						<ice:selectOneRadio id="tabFocusRadioBtns" partialSubmit="true"
+							value="#{staticTabbedPaneExample.selectedIndex}"
+							title="#{msgs['page.panelTabSet.static.accessibility.focusRadio']}">
+							<f:selectItem itemValue="0"
+								itemLabel="#{msgs['page.panelTabSet.tab1']}" />
+							<f:selectItem itemValue="1"
+								itemLabel="#{msgs['page.panelTabSet.tab2']}" />
+							<f:selectItem itemValue="2"
+								itemLabel="#{msgs['page.panelTabSet.tab3']}" />
+						</ice:selectOneRadio>
+					</ice:panelGroup>
+				</ice:panelGroup>
+
+				<!-- Tab Placement Controls -->
+				<ice:panelGroup style="float:left;width:200px;">
+
+					<ice:panelGroup style="float:left;" styleClass="firstChildTitle">
+						<ice:outputLabel value="#{msgs['page.panelTabSet.tabPlacement']}" />
+					</ice:panelGroup>
+
+					<ice:panelGroup styleClass="clearer" />
+
+					<ice:panelGroup style="float:left;">
+						<ice:selectOneRadio id="tabPlacementRadioBtns"
+							value="#{staticTabbedPaneExample.tabPlacement}"
+							partialSubmit="true"
+							title="#{msgs['page.panelTabSet.static.accessibility.placementRadio']}">
+							<f:selectItem itemLabel="#{msgs['page.panelTabSet.top']}"
+								itemValue="top" />
+							<f:selectItem itemLabel="#{msgs['page.panelTabSet.bottom']}"
+								itemValue="bottom" />
+						</ice:selectOneRadio>
+					</ice:panelGroup>
+				</ice:panelGroup>
+				<ice:messages />
+			</ice:panelGroup>
+
+
+			<!-- Static Tab Set -->
+			<ice:panelGroup id="tabSetTabs"
+				styleClass="exampleBox panelTabSetContainer">
+				<ice:panelTabSet id="icePnlTbSet"
+					selectedIndex="#{staticTabbedPaneExample.focusIndex}"
+					tabPlacement="#{staticTabbedPaneExample.tabPlacement}"
+					tabChangeListener="#{staticTabbedPaneExample.processTabChange}"
+					title="blabla"
+					summary="blabla">
+
+					<!-- Panel Tab 1 defined with some basic content -->
+					<ice:panelTab
+						rendered="#{staticTabbedPaneExample.tabbedPane1Visible}"
+						label="CONTENT 1"
+						icon="images/menu/recent.gif"
+						title="Titel 1">
+						<div style="height: 150px;"><ice:outputText
+							value="some text"
+							style="font-weight:bold;" /> <ice:outputText
+							value="some more}" />
+						<br />
+						</div>
+					</ice:panelTab>
+
+					<!-- Panel Tab 2 defined with some basic content -->
+					<ice:panelTab
+						rendered="#{staticTabbedPaneExample.tabbedPane2Visible}"
+						label="CONTENT 2"
+						title="#{msgs['page.panelTabSet.static.accessibility.tabTwoTitle']}'">
+						<div style="height: 150px;"><ice:outputText
+							value="text text"
+							style="font-weight:bold;" /> <ice:outputText
+							value="text text" />
+						<br />
+						</div>
+					</ice:panelTab>
+
+					<!-- Panel Tab 3 defined with some basic content -->
+					<ice:panelTab
+						rendered="#{staticTabbedPaneExample.tabbedPane3Visible}"
+						label="CONTENT 3"
+						icon="images/menu/recent.gif" iconAlignRight="true"
+						title="text text">
+						<div style="height: 150px;"><ice:outputText
+							value="text text"
+							style="font-weight:bold;" /> <ice:outputText
+							value="text text" />
+						</div>
+					</ice:panelTab>
+
+					<!-- This text is not part of a panelTab and therefore will be displayed on every tab -->
+					<ice:outputText value="This text is not part of a panelTab and therefore will be displayed on every tab" />
+
+				</ice:panelTabSet>
+			</ice:panelGroup>
+
+		</ice:panelGroup>
+	</ice:form>
+</h:body>
+</html>

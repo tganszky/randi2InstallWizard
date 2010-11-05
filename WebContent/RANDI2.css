@@ -1,153 +1,189 @@
-body {
-	color: black;
-	background-color: #eeeeee;
-	font-size: 100.01%;
-	font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-	margin: 0;
-	padding: 1em;
-	min-width: 41em;
-	/* Mindestbreite verhindert Umbruch und Anzeigefehler in modernen Browsern */
-}
-
-h1 {
-	font-size: 1.5em;
-	margin: 0 0 0.7em;
-	padding: 0.3em;
-	text-align: center;
-	background-color: #fff;
-	border: 2px ridge silver;
-}
-
-ul#Navigation {
-	font-size: 0.83em;
-	float: left;
-	width: 18em;
-	margin: 0 0 1.2em;
-	padding: 0;
-	border: 1px silver;
-}
-
-ul#Navigation li {
-	list-style: none;
-	margin: 0;
-	padding: 0.5em;
-}
-
-ul#Navigation a {
+/* RANDI2 Style */
+.b1,.b2,.b3,.b4 {
+	font-size: 1px;
+	overflow: hidden;
 	display: block;
-	padding: 0.2em;
+}
+
+.b1 {
+	height: 1px;
+	background: #d9d9d9;
+	margin: 0 5px;
+}
+
+.b2 {
+	height: 1px;
+	background: #f5f5f5;
+	border-right: 2px solid #d9d9d9;
+	border-left: 2px solid #d9d9d9;
+	margin: 0 3px;
+}
+
+.b3 {
+	height: 1px;
+	background: #f5f5f5;
+	border-right: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	margin: 0 2px;
+}
+
+.b4 {
+	height: 2px;
+	background: #f5f5f5;
+	border-right: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	margin: 0 1px;
+}
+
+.contentb {
+	background: #f5f5f5;
+	border-right: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+}
+
+.contentb2 {
+	border: 1px solid #d9d9d9;
+}
+
+.contentb div {
+	margin-left: 5px;
+}
+
+.body {
+	margin: 0px 0px;
+	padding: 0px;
+	/* Need to set body margin and padding to get consistency between browsers. */
+	text-align: center; /* Hack for IE5/Win */
+}
+
+.login {
+	width: 600px;
+	height: 200px;
+	margin: 0px auto; /* Right and left margin widths set to "auto" */
+	margin-top: 150px;
+	text-align: left; /* Counteract to IE5/Win Hack */
+	padding: 0px;
+	text-align: left;
+}
+
+.goodbye {
+	width: 300px;
+	height: 200px;
+	margin: 0px auto; /* Right and left margin widths set to "auto" */
+	margin-top: 150px;
+	text-align: justify; /* Counteract to IE5/Win Hack */
+	padding: 0px;
+	text-align: justify;
+}
+
+.loginInfo {
+	padding: 10px;
+}
+
+.terms {
+	width: 800px;
+	margin: 0px auto; /* Right and left margin widths set to "auto" */
+	margin-top: 10px;
+	text-align: left; /* Counteract to IE5/Win Hack */
+	padding: 0px;
+	text-align: left;
+}
+
+.contentRANDI2 {
+	width: 700px;
+	margin: 0px auto; /* Right and left margin widths set to "auto" */
+	text-align: left; /* Counteract to IE5/Win Hack */
+	padding: 0px;
+	/*
+	border: 1px dashed #333;
+	background-color: #eee;
+	*/
+}
+
+.contentREGISTER {
+	width: 450px;
+	margin: 0px auto; /* Right and left margin widths set to "auto" */
+	text-align: left; /* Counteract to IE5/Win Hack */
+	padding: 0px;
+	/*
+	border: 1px dashed #333;
+	background-color: #eee;
+	*/
+}
+
+.loginError {
+	background-image: url(img/icons/error16.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	padding: 5px;
+	padding-left: 30px;
 	font-weight: bold;
+	color: #CC3333;
 }
 
-ul#Navigation a:link {
+.exampleBox {
+	margin: 15px 15px 0 0;
+	padding: 15px;
+	background: #FFF;
+	border: 1px solid #d9d9d9;
+	display: block;
+	float: left;
+}
+
+.panelSeriesContainer {
+	width: 200px;
+	border: 1px solid #DADADA;
+	/*padding: 10px;*/
+	margin: 5px;
+	float: left;
+}
+
+.exampleBox.panelSeriesContainer {
+	width: 424px;
+}
+
+.errorMsg {
+	background-image: url("img/icons/exception16.png");
+	background-position: left;
+	background-repeat: no-repeat;
+	border: 1px solid red;
 	color: black;
-	background-color: #eee;
+	font-weight: bold;
+	padding-left: 25px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 2px;
 }
 
-ul#Navigation a:visited {
-	color: #666;
-	background-color: #eee;
-}
-
-ul#Navigation a:hover {
+.errorMsgError {
+	background-image: url("img/icons/exception16.png");
+	background-position: left;
+	background-repeat: no-repeat;
 	color: black;
-	background-color: white;
+	font-weight: bold;
+	padding-left: 25px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 2px;
+	font-size:10px;
 }
 
-ul#Navigation a:active {
-	color: white;
-	background-color: gray;
+.contentPane {
+	width: 700px;
+	margin: 0px auto; /* Right and left margin widths set to "auto" */
+	text-align: left; /* Counteract to IE5/Win Hack */
+	padding: 0px;
+	padding-left: 2px;
+	padding-top: 20px;
+	padding-bottom: 2px;
+	padding-right: 2px;
 }
 
-div#Info {
-	font-size: 0.9em;
-	float: right;
-	width: 12em;
-	margin: 0 0 1.1em;
-	padding: 0;
-	background-color: #eee;
-	border: 1px silver;
-}
-
-div#Info h2 {
-	font-size: 1.33em;
-	margin: 0.2em 0.5em;
-}
-
-div#Info p {
-	font-size: 1em;
-	margin: 0.5em;
-}
-
-div#Inhalt {
-	margin: 0 12em 1em 16em;
-	padding: 0 1em;
-	border: 1px silver;
-}
-
-* html div#Inhalt {
-	height: 1em;
-	/* Workaround gegen den 3-Pixel-Bug des Internet Explorer bis Version 6 */
-}
-
-div#Inhalt h2 {
-	font-size: 1.2em;
-	margin: 0.2em 0;
-}
-
-div#Inhalt p {
-	font-size: 1em;
-	margin: 1em 0;
-}
-
-p#Fusszeile {
-	clear: both;
-	font-size: 0.9em;
-	margin: 0;
-	padding: 0.1em;
-	text-align: center;
-	background-color: #fed;
-	border: 1px solid silver;
-}
-
-form li div label {
-	clear: both;
-	color: #444;
-	display: block;
-	font-size: 9px;
-	line-height: 9px;
-	margin: 0;
-	padding-top: 3px;
-}
-
-form li span label {
-	clear: both;
-	color: #444;
-	display: block;
-	font-size: 9px;
-	line-height: 9px;
-	margin: 0;
-	padding-top: 3px;
-}
-
-label.description {
-	border: none;
-	color: #222;
-	display: block;
-	font-size: 95%;
-	font-weight: 700;
-	line-height: 150%;
-	padding: 0 0 1px;
-}
-
-input.text {
-	background: #fff top;
-	border-bottom: 1px solid #ddd;
-	border-left: 1px solid #c3c3c3;
-	border-right: 1px solid #c3c3c3;
-	border-top: 1px solid #7c7c7c;
-	color: #333;
-	font-size: 100%;
-	margin: 0;
-	padding: 2px 0;
+.centeredContent {
+	width: 800px;
+	margin: 0px auto; /* Right and left margin widths set to "auto" */
+	margin-top: 50px;
+	text-align: left; /* Counteract to IE5/Win Hack */
+	padding: 0px;
+	text-align: left;
 }
